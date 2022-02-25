@@ -15,8 +15,10 @@ class WordDetector:
     def findWhitelistedWord(self, message):
         messageList = message.lower().split()
         for x in messageList:
+            print(x)
             for list in self.whitelist:
                 for y in list:
+                    print(y)
                     if x == y and x != "0":
                         return True, list[0]
         return False, ""
