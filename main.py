@@ -1,6 +1,6 @@
+import discord
 from ast import arg
 from typing import Collection
-import discord
 from utilities.helpMessages import helper
 from utilities.embeddedMessageHandler import Embedder
 from utilities.wordDetection import WordDetector
@@ -56,4 +56,5 @@ async def on_message(message):
         await message.channel.send(file=picture)
         return
 
-client.run('ODA1MDMzMjY4NDQxMTIwNzc5.YBU_pw.iQ69T7fKtz3JmVGqC898y8wu5l4')
+token = open("ignoredFiles/token.txt")
+client.run(token.readline())
