@@ -57,5 +57,5 @@ async def on_message(message):
         await message.channel.send(file=picture)
         return
 
-def main():
+if __name__ == "__main__":
     client.run(sys.argv[1])
