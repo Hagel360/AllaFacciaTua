@@ -2,32 +2,32 @@ import discord
 import numpy as np
 import os
 import random
+import json
 
 class WordDetector:
 
     def __init__(self):
-        self.whitelist = np.genfromtxt("utilities/whitelistedWords.csv", dtype='str', delimiter=',')
+        self.database = json.load(open("database/words.json"))
         self.imageFolderPath = "pictures/"
 
-    # Checks if the message contains a whitelisted words
-    # TODO: Handle cases where there is no spaces such as "mettefrederiksen".
-    # TODO: Handle cases with two words, such as "store leder".
+    # Checks if the message contains a whitelisted word that is in the database
     def findWhitelistedWord(self, message):
-        messageList = message.lower().split()
-        for x in messageList:
-            print(x)
-            for list in self.whitelist:
-                for y in list:
-                    print(y)
-                    if x == y and x != "0":
-                        return True, list[0]
+        sentence = message.lower()
+        database = self.database
+        for names in database["Names"]:
+            for trigger in database["Names"][names][0]["triggers"]:
+                if sentence.find(trigger) >= 0:
+                    return True, database["Names"][names][1]["folder"]
         return False, ""
 
     #Finds a corresponding picture from the given words, returns a path to a random picture from that folder
     def findPicturePath(self, word):
-        pictures = os.listdir(self.imageFolderPath+word)
-        randomInt = random.randint(1, len(pictures))
-        return self.imageFolderPath+word+"/"+pictures[randomInt]
+        try:
+            pictures = os.listdir(self.imageFolderPath+word)
+            randomInt = random.randint(1, len(pictures))
+            return self.imageFolderPath+word+"/"+pictures[randomInt]
+        except:
+            print("Folder not found")
 
     def createNewWord(self, word):
         return "test0"

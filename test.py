@@ -1,15 +1,15 @@
 from typing import Collection
 import discord
 import os
-from utilities.helpMessages import helper
-from utilities.embeddedMessageHandler import Embedder
-from utilities.wordDetection import WordDetector
+import json
+
 from utilities.databaseMaintainer import databaseMaintainer
 
-_send = Embedder()
-helper = helper()
-wordDetecter = WordDetector()
-Maintainer = databaseMaintainer()
-message = "frederiksen"
+maintainer = databaseMaintainer()
 
-Maintainer.addNewEntry("mette", "mommy")
+test_sentence = "jonas store leder"
+
+maintainer.addNewEntry("mette", "frederiksen")
+maintainer.addNewEntry("jonas", "qwerty")
+maintainer.addNewEntry("qwertty", "jonas")
+maintainer.addNewEntry("qwerty", "qwerty")
