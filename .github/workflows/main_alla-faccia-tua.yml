@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'Alla-Faccia-Tua'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_27ED0860BCC94787A87AF53D206560D9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_192D4A7B8B13477B8B728B55F7864F50 }}
