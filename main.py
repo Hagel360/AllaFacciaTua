@@ -1,4 +1,5 @@
 import discord
+import sys
 from ast import arg
 from typing import Collection
 from utilities.helpMessages import helper
@@ -56,5 +57,5 @@ async def on_message(message):
         await message.channel.send(file=picture)
         return
 
-token = open("ignoredFiles/token.txt")
-client.run(token.readline())
+def main():
+    client.run(sys.argv[1])
