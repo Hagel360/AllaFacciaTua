@@ -58,4 +58,7 @@ async def on_message(message):
         return
 
 if __name__ == "__main__":
-    client.run(sys.argv[1])
+    if len(sys.argv) > 1:
+        client.run(sys.argv[1])
+    else:
+        client.run(open("ignoredFiles/token.txt").readline())
