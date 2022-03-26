@@ -5,7 +5,7 @@
             {"folder": "mette"}
         ],
         "Jonas": [
-            {"triggers": ["jonas","hagel"]},
+            {"triggers": ["jonas","hagel","svin"]},
             {"folder": "jonas"}
         ]
     }
