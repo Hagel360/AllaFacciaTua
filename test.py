@@ -4,12 +4,13 @@ import os
 import json
 
 from utilities.databaseMaintainer import databaseMaintainer
+from utilities.wordDetection import WordDetector
 
 maintainer = databaseMaintainer()
+detector = WordDetector()
 
-test_sentence = "jonas store leder"
+_, path = detector.findWhitelistedWord("svin")
+print(detector.findPicturePath(path))
 
-maintainer.addNewEntry("mette", "frederiksen")
-maintainer.addNewEntry("jonas", "qwerty")
-maintainer.addNewEntry("qwertty", "jonas")
-maintainer.addNewEntry("qwerty", "qwerty")
+_, path = detector.findWhitelistedWord("mette")
+print(detector.findPicturePath(path))

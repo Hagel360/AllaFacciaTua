@@ -6,7 +6,7 @@
         ],
         "Jonas": [
             {"triggers": ["jonas","hagel","svin"]},
-            {"folder": "jonas"}
+            {"folder": "jonasSvin"}
         ]
     }
 }
