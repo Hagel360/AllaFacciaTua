@@ -9,8 +9,8 @@ from utilities.wordDetection import WordDetector
 maintainer = databaseMaintainer()
 detector = WordDetector()
 
-_, path = detector.findWhitelistedWord("svin")
-print(detector.findPicturePath(path))
+from pathlib import Path
 
-_, path = detector.findWhitelistedWord("mette")
-print(detector.findPicturePath(path))
+database = json.load(open(Path("database/words.json").absolute()))
+
+print(database)

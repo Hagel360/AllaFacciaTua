@@ -2,11 +2,12 @@ from operator import indexOf
 import numpy as np
 import os
 import json
+from pathlib import Path
 
 class databaseMaintainer:
 
     def __init__(self):
-        self.database = json.load(open("database/words.json"))
+        self.database = json.load(open(Path("database/words.json").absolute()))
         self.imageFolderPath = "pictures/"
 
     """

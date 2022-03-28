@@ -3,11 +3,12 @@ import numpy as np
 import os
 import random
 import json
+from pathlib import Path
 
 class WordDetector:
 
     def __init__(self):
-        self.database = json.load(open("database/words.json"))
+        self.database = json.load(open(Path("database/words.json").absolute()))
         self.imageFolderPath = "pictures/"
 
     # Checks if the message contains a whitelisted word that is in the database
