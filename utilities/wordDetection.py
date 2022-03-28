@@ -23,12 +23,12 @@ class WordDetector:
     #Finds a corresponding picture from the given words, returns a path to a random picture from that folder
     def findPicturePath(self, word):
         try:
-            picturePath = os.path.join(self.imageFolderPath, word)
-            pictures = os.listdir(picturePath)
-            if len(pictures) == 1:
-                return  os.path.join(picturePath, pictures)
+            picturePath = os.listdir(self.imageFolderPath + "/" + word)
+            if len(picturePath) == 1:
+                print(picturePath)
+                return  self.imageFolderPath + word +  "/" + picturePath[0]
             else:
-                return self.imageFolderPath+word+"/"+pictures[random.randint(1, len(pictures))]
+                return self.imageFolderPath + word + "/" + picturePath[random.randint(1, len(picturePath))]
         except:
             print("Folder not found")
 

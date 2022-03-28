@@ -54,6 +54,7 @@ async def on_message(message):
     wordFound, folderName = wordDetecter.findWhitelistedWord(message.content)
     if wordFound:
         picture = discord.File(wordDetecter.findPicturePath(folderName))
+        print(picture)
         await message.channel.send(file=picture)
         return
 
